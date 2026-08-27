@@ -5,6 +5,10 @@ profile information visible to a configured LinkedIn account as structured JSON.
 
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/Flamki/linkedin-profile-api)
 
+**Live API:** https://linkedin-profile-api-atik.onrender.com  
+**Interactive docs:** https://linkedin-profile-api-atik.onrender.com/docs  
+**Health check:** https://linkedin-profile-api-atik.onrender.com/health
+
 The extractor first calls LinkedIn's internal normalized Voyager profile-view endpoint from
 an authenticated browser session. It normalizes the entity graph into a stable public schema,
 then visits the profile detail routes to fill gaps from the rendered DOM. This hybrid approach
@@ -88,7 +92,7 @@ If `API_KEY` is configured, send it as `X-API-Key`. Query strings and regional L
 accepted and canonicalized; only HTTPS `/in/{identifier}` profile URLs are allowed.
 
 ```bash
-curl -X POST https://YOUR-HOST/v1/profiles/scrape \
+curl -X POST https://linkedin-profile-api-atik.onrender.com/v1/profiles/scrape \
   -H "Content-Type: application/json" \
   -H "X-API-Key: YOUR_API_KEY" \
   -d '{"profile_url":"https://www.linkedin.com/in/example-person/"}'
