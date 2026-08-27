@@ -5,9 +5,9 @@ profile information visible to a configured LinkedIn account as structured JSON.
 
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/Flamki/linkedin-profile-api)
 
-**Live API:** https://linkedin-profile-api-atik.onrender.com  
-**Interactive docs:** https://linkedin-profile-api-atik.onrender.com/docs  
-**Health check:** https://linkedin-profile-api-atik.onrender.com/health
+- **Live API:** https://linkedin-profile-api-atik.onrender.com
+- **Interactive docs:** https://linkedin-profile-api-atik.onrender.com/docs
+- **Health check:** https://linkedin-profile-api-atik.onrender.com/health
 
 The extractor first calls LinkedIn's internal normalized Voyager profile-view endpoint from
 an authenticated browser session. It normalizes the entity graph into a stable public schema,
