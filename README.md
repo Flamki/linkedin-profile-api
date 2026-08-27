@@ -164,8 +164,9 @@ Unauthenticated liveness endpoint used by Docker and the hosting platform.
    Render generates `API_KEY`; copy it once for the submission reviewer.
 4. Wait for `/health` to return `200`, then make a test request through `/docs`.
 
-Render terminates TLS at the edge, so the resulting `onrender.com` URL is HTTPS. The Starter plan
-is specified because Playwright/Chromium generally exceeds small free-instance memory limits.
+Render terminates TLS at the edge, so the resulting `onrender.com` URL is HTTPS. The included
+blueprint uses the free plan for an easy review deployment; upgrade the service if Chromium runs
+out of memory under real traffic.
 
 The same Dockerfile can be deployed to Cloud Run, Railway, Fly.io, or another container host.
 Keep one application worker per container and scale horizontally only after moving rate-limit and
