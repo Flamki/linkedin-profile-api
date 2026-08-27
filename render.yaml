@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: linkedin-profile-api
+    runtime: docker
+    plan: starter
+    healthCheckPath: /health
+    autoDeployTrigger: checksPass
+    envVars:
+      - key: ENVIRONMENT
+        value: production
+      - key: HEADLESS
+        value: "true"
+      - key: LINKEDIN_LI_AT
+        sync: false
+      - key: LINKEDIN_JSESSIONID
+        sync: false
+      - key: API_KEY
+        generateValue: true

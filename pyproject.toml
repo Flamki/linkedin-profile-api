@@ -1,0 +1,45 @@
+[build-system]
+requires = ["hatchling>=1.27.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "linkedin-profile-api"
+version = "1.0.0"
+description = "A production-minded API that turns LinkedIn profile URLs into structured JSON."
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+authors = [{ name = "Flamki" }]
+dependencies = [
+  "fastapi==0.141.1",
+  "playwright==1.62.0",
+  "pydantic-settings==2.15.0",
+  "uvicorn[standard]==0.52.4",
+]
+
+[project.optional-dependencies]
+dev = [
+  "httpx2==2.12.0",
+  "mypy==2.3.1",
+  "pytest==9.1.1",
+  "ruff==0.16.4",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["linkedin_profile_api"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "ASYNC"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+plugins = ["pydantic.mypy"]
